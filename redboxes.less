@@ -1,16 +1,17 @@
 /* Red boxes */
 .redbox {
 	/* background-color: red; */
-	margin-right: 5px;
+	margin-right: 1.5%;
 	margin-left: 0;
-	width: 49.5%;
+	width: 48.5%;
 	float: left;
 	border: 8px solid #f0f0f0;
+	min-height: 280px;
 }
 
 .redbox + .redbox {
 	margin-right: 0;
-	margin-left: 5px;
+	margin-left: 1.5%;
 }
 
 .redbox > header {
@@ -19,15 +20,31 @@
 	background-color: #d1111c;
 	color: #ffffff;
 	text-align: center;
+
+	/* evil style.css */
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
 }
 .redbox > section {
-	padding: 15px 20px;
+	padding: 15px 30px;
 }
 
 
 /* formulär för att aktivera sig */
 .val2014-insats input, .val2014-insats select {
 	border-radius: 4px;
-	width: 50%;
+	width: 47.5%;
 	float: left;
+	margin: 8px 0;
+	padding: 7px;
+}
+.val2014-insats > select {
+	padding: 6px;
+}
+form.val2014-insats {
+	overflow: hidden;
+}
+.val2014-insats input:nth-child(4n), .val2014-insats select:nth-child(4n) {
+	margin-left: 5%;
 }
