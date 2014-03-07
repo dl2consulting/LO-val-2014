@@ -10,22 +10,26 @@
 	*/
 	width: 100%;
 	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 10px;
+	float: none;
 	border: 8px solid #f0f0f0;
 	
 }
 
 .redbox + .redbox {
-	margin-right: 0;
-	margin-left: 1.5%;
+
 }
 
 .redbox > header {
-	padding: 8px 0;
+	font-family: 'Open Sans',Arial,sans-serif;
+	padding: 10px 0;
 	font-weight: bold;
 	background-color: #d1111c;
 	color: #ffffff;
 	text-align: center;
-	font-size: 18px;
+	font-size: 23px;
+	
 
 	/* evil style.css */
 	-moz-box-shadow: none;
@@ -36,14 +40,30 @@
 	padding: 15px 30px;
 }
 
+/* politiska krav */
+ul.politiska-krav {
+	list-style: none;
+	margin: 0;
+	font-family: 'Open Sans',Arial,sans-serif;
+	/* color: #444444; */
+	font-size: 21px;
+	line-height: 1.19em;
+	margin-bottom: 20px;
+}
+ul.politiska-krav li > a {
+	color: #444444;
+	line-height: 42px;
+}
+
 
 /* formulär för att aktivera sig */
 .val2014-insats input, .val2014-insats select {
 	border-radius: 4px;
-	width: 47.5%;
-	float: left;
 	margin: 8px 0;
 	padding: 7px;
+}
+.val2014-insats input:last-child {
+	margin-bottom: 0;
 }
 .val2014-insats > select {
 	padding: 6px;
@@ -51,19 +71,67 @@
 form.val2014-insats {
 	overflow: hidden;
 }
-.val2014-insats input:nth-child(4n), .val2014-insats select:nth-child(4n) {
-	margin-left: 5%;
+
+p.joey-ramone {
+	color: #656565;
+	font-size: 13px;
+	line-height: 1.42857;
+}
+img.left-pusher {
+	float: left;
+	margin-right: 14px;
 }
 
-
+.val2014-insats .nicestbutton {
+	width: auto;
+}
 
 /* break points */
+@media (min-width: 480px) {
+	/* marginaler för de högra */
+	.val2014-insats input:nth-child(4n), .val2014-insats select:nth-child(4n) {
+		margin-left: 5%;
+	}	
+
+	.val2014-insats input, .val2014-insats select {
+		width: 47.5%;
+		float: left;
+	}
+}
+
 @media (min-width: 624px) {
 
 }
 @media (min-width: 768px) {
 
-.redbox {
+	.redbox {
+		/* background-color: red; */
+		margin-right: 1.5%;
+		margin-left: 0;
+		width: 48.5%;
+		float: left;
+		min-height: 280px;
+	}
+
+	.redbox + .redbox {
+		margin-right: 0;
+		margin-left: 1.5%;
+	}
+
+}
+@media (min-width: 1024px) {
+
+}
+
+/* lt ie 9 stuff */
+.lt-ie9 .val2014-insats input:nth-child(4n), .val2014-insats select:nth-child(4n) {
+	margin-left: 5%;
+}	
+.lt-ie9 .val2014-insats input, .val2014-insats select {
+	width: 47.5%;
+	float: left;
+}
+.lt-ie9 .redbox {
 	/* background-color: red; */
 	margin-right: 1.5%;
 	margin-left: 0;
@@ -72,12 +140,7 @@ form.val2014-insats {
 	min-height: 280px;
 }
 
-.redbox + .redbox {
+.lt-ie9 .redbox + .redbox {
 	margin-right: 0;
 	margin-left: 1.5%;
-}
-
-}
-@media (min-width: 1024px) {
-
 }
