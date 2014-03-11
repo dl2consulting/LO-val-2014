@@ -1,3 +1,60 @@
 
 
+meter {
+  width: 500px;
+  height: 25px;
+  -webkit-appearance: none; /* Reset appearance */
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
 
+meter::-webkit-meter-bar {
+  background: none; /* Required to get rid of the default background property */
+  background-color: whiteSmoke;
+  box-shadow: 0 5px 5px -5px #333 inset;
+}
+
+.meter-frame {
+	
+	border: none;
+	display: block;
+	float: left;
+	height: 36px;
+	width: 100%;
+	background-color: #000;
+	margin-bottom: 20px;
+}
+
+
+.meter {
+	background-color: #D61826;
+	display:block;
+	height:36px;
+	padding:11px;
+}
+
+.meter-1 {
+	width:78%;
+}
+
+.meter-2 {
+	width:63%;
+}
+
+.meter-3 {
+	width:76%;
+}
+
+.meter-text {
+	float:right;
+	color:#ded9cd;
+}
+
+.main-footer p {
+	font-family: arial;
+	font-size: 12px;
+	color: #ded9cd;
+	line-height: 16px;
+	font-weight: 400;
+	margin-bottom: 6px;
+}
