@@ -48,7 +48,25 @@ $(".fancybox")
     });
 
 
+    /* toggle politiska krav */
+    $('.politiska-krav').on('click', 'a', function(){
+        var $this = $(this),
+            $li = $this.closest('li');
+            //kolla om den är öppen redan:
+            isOpen = $li.hasClass('open');
 
+        //console.log('isopen', isOpen);
+
+        //stäng alla andra:
+        $this.closest('.politiska-krav').find('li.open').removeClass('open');
+
+        //öppna om stängd:
+        if ( !isOpen ){
+
+            //console.log('opening or wtf!');
+            $li.addClass('open'); 
+        }
+    });
 
 
 
