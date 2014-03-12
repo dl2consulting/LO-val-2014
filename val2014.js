@@ -58,13 +58,13 @@ $(".fancybox")
         //console.log('isopen', isOpen);
 
         //stäng alla andra:
-        $this.closest('.politiska-krav').find('li.open').removeClass('open').find('i.after').removeClass('icon-angle-right').addClass('icon-angle-down');
+        $this.closest('.politiska-krav').find('li.open').removeClass('open').find('i.after').removeClass('icon-angle-down').addClass('icon-angle-right');
 
         //öppna om stängd:
         if ( !isOpen ){
 
             //console.log('opening or wtf!');
-            $li.addClass('open').find('i.after').removeClass('icon-angle-right').addClass('icon-angle-right'); 
+            $li.addClass('open').find('i.after').removeClass('icon-angle-right').addClass('icon-angle-down'); 
         }
     });
 
