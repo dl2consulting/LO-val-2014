@@ -37,7 +37,7 @@
 	box-shadow: none;
 }
 .redbox > section {
-	padding: 15px 30px;
+	padding: 30px 40px;
 }
 
 /* politiska krav */
@@ -48,28 +48,39 @@ ul.politiska-krav {
 	/* color: #444444; */
 	font-size: 21px;
 	line-height: 1.19em;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
+}
+ul.politiska-krav li {
+	margin-bottom: 15px;
 }
 ul.politiska-krav li > a {
 	color: #444444;
-	line-height: 42px;
+	line-height: 45px;
+}
+.politiska-krav a > .before {
+	margin-right: 6px;
+}
+.politiska-krav a > .after {
+	margin-left: 6px;
+}
+.politiska-krav .dee-dee-ramone {
+	margin: 0 15px;
 }
 
-
 /* formulär för att aktivera sig */
-.val2014-insats input, .val2014-insats select {
+.val2014-insats > input, .val2014-insats > select {
 	border-radius: 4px;
 	margin: 8px 0;
 	padding: 7px;
 }
-.val2014-insats input:last-child {
+.val2014-insats > input:last-child {
 	margin-bottom: 0;
 }
 .val2014-insats > select {
 	padding: 6px;
 }
 form.val2014-insats {
-	overflow: hidden;
+	/* overflow: hidden; */
 }
 
 p.joey-ramone {
@@ -86,14 +97,22 @@ img.left-pusher {
 	width: auto;
 }
 
+/*
+a.nicestbutton {
+	line-height: 20px;
+}
+*/
+
 /* break points */
 @media (min-width: 480px) {
 	/* marginaler för de högra */
-	.val2014-insats input:nth-child(4n), .val2014-insats select:nth-child(4n) {
+	.val2014-insats > input:nth-child(4n),
+	.val2014-insats > select:nth-child(4n) {
 		margin-left: 5%;
 	}	
 
-	.val2014-insats input, .val2014-insats select {
+	.val2014-insats > input,
+	.val2014-insats > select {
 		width: 47.5%;
 		float: left;
 	}
@@ -124,10 +143,12 @@ img.left-pusher {
 }
 
 /* lt ie 9 stuff */
-.lt-ie9 .val2014-insats input:nth-child(4n), .val2014-insats select:nth-child(4n) {
+.lt-ie9 .val2014-insats > input:nth-child(4n),
+.lt-ie9 .val2014-insats > select:nth-child(4n) {
 	margin-left: 5%;
 }	
-.lt-ie9 .val2014-insats input, .val2014-insats select {
+.lt-ie9 .val2014-insats > input,
+.lt-ie9 .val2014-insats > select {
 	width: 47.5%;
 	float: left;
 }
