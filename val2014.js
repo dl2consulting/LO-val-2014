@@ -51,20 +51,20 @@ $(".fancybox")
     /* toggle politiska krav */
     $('.politiska-krav').on('click', 'a', function(){
         var $this = $(this),
-            $li = $this.closest('li');
+            $li = $this.closest('li'),
             //kolla om den är öppen redan:
             isOpen = $li.hasClass('open');
 
         //console.log('isopen', isOpen);
 
         //stäng alla andra:
-        $this.closest('.politiska-krav').find('li.open').removeClass('open');
+        $this.closest('.politiska-krav').find('li.open').removeClass('open').find('i.after').removeClass('icon-angle-right').addClass('icon-angle-down');
 
         //öppna om stängd:
         if ( !isOpen ){
 
             //console.log('opening or wtf!');
-            $li.addClass('open'); 
+            $li.addClass('open').find('i.after').removeClass('icon-angle-right').addClass('icon-angle-right'); 
         }
     });
 
