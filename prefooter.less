@@ -1,5 +1,6 @@
 
 
+
 meter {
   width: 500px;
   height: 25px;
@@ -14,47 +15,95 @@ meter::-webkit-meter-bar {
   box-shadow: 0 5px 5px -5px #333 inset;
 }
 
+
 .meter-frame {
-	
 	border: none;
 	display: block;
 	float: left;
 	height: 36px;
 	width: 100%;
 	background-color: #000;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 
 
 .meter {
-	background-color: #D61826;
+	background-color: @meter-color;
 	display:block;
 	height:36px;
 	padding:11px;
 }
 
-.meter-1 {
-	width:78%;
-}
-
-.meter-2 {
-	width:63%;
-}
-
-.meter-3 {
-	width:76%;
-}
+.meter-1 {width:78%;}
+.meter-2 {width:63%;}
+.meter-3 {width:76%;}
 
 .meter-text {
 	float:right;
-	color:#ded9cd;
+	color:@footer-text-color;
 }
 
 .main-footer p {
 	font-family: arial;
 	font-size: 12px;
-	color: #ded9cd;
+	color: @footer-text-color;
 	line-height: 16px;
 	font-weight: 400;
 	margin-bottom: 6px;
 }
+
+.val-footer {
+	padding:0 8px;
+	margin-top:25px;
+}
+
+.val-footer .mitt-sverige h2 {
+	margin-bottom:55px;
+}
+
+.val-footer .turne-plan {
+	max-width:444px;
+}
+
+.turne-plan img {
+	margin-bottom: 12px;
+}
+
+.turne-frame {
+	border: none;
+	display: block;
+	float: left;
+	height: 36px;
+	width: 100%;
+	background-color: #000;
+	margin-bottom: 15px;
+	padding: 10px 8px 0 !important;
+}
+
+.turne-text, .turne-namn {
+	color: @footer-text-color;
+	line-height: 16px;
+	font-weight: 400;
+	margin-bottom: 6px;
+}
+.turne-text {
+	font-size: 14px;
+}
+.turne-name {
+	font-size: 12px;
+}
+
+.box-link {
+	margin-top: 5px;
+	width: 80px;
+	height: 36px;
+	background-color: #000;
+	display: inline-block;
+	padding: 10px 10px 10px 15px !important;
+}
+
+.box-link a {
+	color:@footer-link-button;
+}
+
+
