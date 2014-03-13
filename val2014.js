@@ -55,15 +55,11 @@ $(".fancybox")
             //kolla om den är öppen redan:
             isOpen = $li.hasClass('open');
 
-        //console.log('isopen', isOpen);
-
         //stäng alla andra:
         $this.closest('.politiska-krav').find('li.open').removeClass('open').find('i.after').removeClass('icon-angle-down').addClass('icon-angle-right');
 
         //öppna om stängd:
         if ( !isOpen ){
-
-            //console.log('opening or wtf!');
             $li.addClass('open').find('i.after').removeClass('icon-angle-right').addClass('icon-angle-down'); 
         }
     });
