@@ -1,4 +1,8 @@
+/*
+js-fil för val2014
 
+
+*/
 
 $(document).ready(function(){
 
@@ -19,19 +23,14 @@ $('.info-slider').bxSlider({
     slideMargin: 10
   });	
 
-
 $(".fancybox")
     .attr('rel', 'gallery')
     .fancybox({
         beforeShow: function () {
             if (this.title) {
                 this.title += '<br />';
-                
-                // Add tweet button
                 this.title += '<a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-url="' + this.href + '">Tweet</a> ';
-                
-                // Add FaceBook like button
-                this.title += '<div class="fb-share-button right" data-href="'+this.href+'" data-type="button_count"></div>';
+                this.title += '<div class="fb-share-button" data-href="'+this.href+'" data-type="button_count"></div>';
 	  }
         },
         afterShow: function() {
@@ -48,6 +47,7 @@ $(".fancybox")
     });
 
 
+
     /* toggle politiska krav */
     $('.politiska-krav').on('click', 'a', function(){
         var $this = $(this),
@@ -55,11 +55,16 @@ $(".fancybox")
             //kolla om den är öppen redan:
             isOpen = $li.hasClass('open');
 
+        //console.log('isopen', isOpen);
+
         //stäng alla andra:
         $this.closest('.politiska-krav').find('li.open').removeClass('open').find('i.after').removeClass('icon-angle-down').addClass('icon-angle-right');
 
         //öppna om stängd:
         if ( !isOpen ){
+
+
+            //console.log('opening or wtf!');
             $li.addClass('open').find('i.after').removeClass('icon-angle-right').addClass('icon-angle-down'); 
         }
     });
