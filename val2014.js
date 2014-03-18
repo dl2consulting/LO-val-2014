@@ -47,6 +47,10 @@ $(".fancybox")
     });
 
 
+ $('video').mediaelementplayer({
+ 
+   });     
+
 
     /* toggle politiska krav */
     $('.politiska-krav').on('click', 'a', function(){
