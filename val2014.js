@@ -69,6 +69,43 @@ $(".fancybox")
         }
     });
 
+    /*  */
+    $('.val2014-insats').on('submit', function(e){
+        var $form = $(this),
+            $btn = $form.find('button'),
+            data = $form.serialize(),
+            url = $form.attr('action');
+
+        e.preventDefault();
+
+        $form.find('.feedback').remove();
+
+        //todo spinner?
+
+        $.ajax({
+            url: url,
+            data: data,
+            dataType: 'xml',
+            error: function(){
+                alert('Något gick fel');
+            },
+            success: function( xml ){
+                var $xml = $(xml),
+                    msg = 'Något gick fel';
+
+                try {
+                    if ( $xml.find('success').html() === 'true' ){
+                        msg = $xml.find('msg').html();
+                    }
+                } catch(err){}/* ngt gick fel */
+
+                $('<p class="feedback">' + msg + '</p>').appendTo($form).slideDown('medium');
+                //console.log('xml:', xml);
+            }
+
+        });
+
+    });
 
 
 });
