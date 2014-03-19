@@ -48,8 +48,24 @@ $(".fancybox")
 
 
  $('video').mediaelementplayer({
+
+ 		  success:function(player){
+
+ 		  	$('.playoverlay').on('click', 'a', function(e,player){
+
+				e.preventDefault();
+				player.setSrc('http://loftp.lo.se/vod/SvenskaModellen_14mars2014.mp4');
+			    player.load();
+			    player.play();
+
+});
+
+
+ 		  }
  
-   });     
+});     
+
+
 
 
     /* toggle politiska krav */
