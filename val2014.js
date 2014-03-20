@@ -125,13 +125,13 @@ $(".fancybox")
  });     
 
     /* toggle politiska krav */
-    $('.politiska-krav').on('click', 'a', function(){
+    $('.politiska-krav').on('click', 'a', function(e){
         var $this = $(this),
             $li = $this.closest('li'),
             //kolla om den är öppen redan:
             isOpen = $li.hasClass('open');
 
-        //console.log('isopen', isOpen);
+        e.preventDefault();
 
         //stäng alla andra:
         $this.closest('.politiska-krav').find('li.open').removeClass('open').find('i.after').removeClass('icon-angle-down').addClass('icon-angle-right');
