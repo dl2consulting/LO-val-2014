@@ -7,12 +7,61 @@ js-fil för val2014
 $(document).ready(function(){
 
 
+	var myPlayer;
+	var mq = window.matchMedia( "(max-width: 1024px)" );
+	var sliderClone;
+	sliderClone = $('.video-slider').clone();
+	var slidervideo;
+	
+
+if (matchMedia) {
+	
+	var mq = window.matchMedia("(max-width: 1024px)");
+
+	if (!mq.addEventListener) {
+    	//mq.attachEvent('resize', WidthChange);
+    	 mq.addListener(WidthChange);
+    	WidthChange(mq);
+}
+else {
+	
+    mq.addListener(WidthChange);
+	WidthChange(mq);
+}
+
+	
+}
+
+// media query change
+function WidthChange(mq) {
+
+	if (mq.matches) {
+
+		slidervideo = $('.video-slider').bxSlider({
+		    slideWidth: 228,
+		    adaptiveHeight: false,
+		    minSlides: 1,
+		    maxSlides: 4,
+		    slideMargin: 10
+ 		 });	
+	}
+	else {
+		
+		if (typeof(slidervideo) != "undefined")
+		slidervideo.destroySlider();
+
+		//var slider = $('.video-wrap .bx-wrapper');
+		//var slider = $('.video-slider');
+		//slider.replaceWith(sliderClone);
+	}
+}
+
 	$('.news-slider').bxSlider({
-    slideWidth: 318,
-    adaptiveHeight: false,
-    minSlides: 1,
-    maxSlides: 3,
-    slideMargin: 10
+	    slideWidth: 318,
+	    adaptiveHeight: false,
+	    minSlides: 1,
+	    maxSlides: 3,
+	    slideMargin: 10
   });
 
 $('.info-slider').bxSlider({
@@ -22,6 +71,8 @@ $('.info-slider').bxSlider({
     maxSlides: 4,
     slideMargin: 10
   });	
+
+
 
 $(".fancybox")
     .attr('rel', 'gallery')
@@ -49,24 +100,29 @@ $(".fancybox")
 
  $('video').mediaelementplayer({
 
- 		  success:function(player){
+ 		success:function(player){
+ 			myPlayer = player;
 
- 		  	$('.playoverlay').on('click', 'a', function(e,player){
+ 			$('.video-mini').on('click', 'a', function(e, player) {
+					e.preventDefault();
 
-				e.preventDefault();
-				player.setSrc('http://loftp.lo.se/vod/SvenskaModellen_14mars2014.mp4');
-			    player.load();
-			    player.play();
+					var webm = $(this).data('webm');
+					var mp4 = $(this).data('mp4');
 
-});
+					var sources = [
+            			{ src: mp4, type: 'video/mp4' },
+            			{ src: webm, type: 'video/webm' }
+        			];
 
+					//console.table(sources);
 
- 		  }
- 
-});     
+					myPlayer.setSrc(sources);
+				    myPlayer.load();
+				    myPlayer.play();
+			});
 
-
-
+		  }
+ });     
 
     /* toggle politiska krav */
     $('.politiska-krav').on('click', 'a', function(){
