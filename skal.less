@@ -3,39 +3,42 @@
 	padding: 0;
 }
 
-#byt-politik-2014 > .rad {
-	border-top: 1px solid #dedede;
-	border-bottom: 1px solid #bfbfbf;
+#byt-politik-2014 .rad {
+	/*border-top: 1px solid #dedede; */
+	border-bottom: 1px solid #e4e4e4;
 	padding: 0px 8px;
 }
+#byt-politik-2014 .rad.noborder {
+	border-bottom: none;
+}
 
-#byt-politik-2014 > .bg-inverted {
-	background-image: url('/home/lo/res.nsf/vRes/global_1392727208885_temp2_png/$File/temp2.png');
+#byt-politik-2014 .bg-inverted {
+	background-image: url('/home/lo/res.nsf/vRes/global_1392727208885_temp1_gif/$File/temp1.gif');
 	background-repeat: repeat;
+}
+
+#byt-politik-2014 .bg-gray {
+	background-color: #f7f7f7;
 }
 
 
 #byt-politik-2014 > .bg {
-	background-image: url('/home/lo/res.nsf/vRes/global_1392727208885_temp3_png/$File/temp3.png');
+	background-image: url('/home/lo/res.nsf/vRes/global_1392727208885_temp2_gif/$File/temp2.gif');
 	background-repeat: repeat;
 }
 
-#byt-politik-2014 > .rad > .container {
+#byt-politik-2014 .rad > .container {
 	/* background-color: #dfdfdf; */
 	padding: 0;
 	margin: 26px auto;
 }
-/* skldpaddan */
+
 #byt-politik-2014 .gray {
 	background-color: @gray;
 }
 
-/*
-#byt-politik-2014 > .rad.topmost > .container{
-	margin: 0 auto 26px; 
-}
+/* Overloading main CSS-file */
 
-#byt-politik-2014 > .rad.bottommost > .container{
-	margin: 26px auto 0; 
+.main-footer {
+	margin: 0;
 }
-*/
