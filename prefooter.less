@@ -83,13 +83,18 @@ meter::-webkit-meter-bar {
 	border: none;
 	display: block;
 	float: left;
-	height: 36px;
+	
 	width: 100%;
 	background-color: #000;
 	margin-bottom: 15px;
-	padding: 10px 8px 0 !important;
+	/* height: 36px; */
+	/* padding: 10px 8px 0 !important; */
+	padding: 9px 8px !important; 
 }
 
+.turne-namn {
+	display: inline;
+}
 .turne-text, .turne-namn {
 	/* color: @footer-text-color; */
 	line-height: 16px;
@@ -115,6 +120,16 @@ meter::-webkit-meter-bar {
 
 .box-link a {
 	color:@footer-link-button;
+}
+.lomedverkande {
+	margin-right: 4px;
+}
+.lomedverkande:after {
+    /* color: #008000; */
+    content: ",";
+}
+.lomedverkande:last-child:after {
+	content: "";
 }
 
 
