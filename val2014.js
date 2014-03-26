@@ -57,27 +57,26 @@ function WidthChange(mq) {
 }
 
 	$('.news-slider').bxSlider({
-	    slideWidth: 318,
+	    slideWidth: 350,
 	    adaptiveHeight: false,
 	    minSlides: 1,
-	    maxSlides: 3,
-	    slideMargin: 10
+	    maxSlides: 3
+
   });
 
 $('.info-slider').bxSlider({
-    slideWidth: 228,
+    slideWidth: 206,
     adaptiveHeight: false,
     minSlides: 1,
     maxSlides: 4,
-    slideMargin: 10
+    slideMargin: 20
   });	
-
-
 
 $(".fancybox")
     .attr('rel', 'gallery')
     .fancybox({
         beforeShow: function () {
+
             if (this.title) {
                 this.title += '<br />';
                 this.title += '<a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-url="' + this.href + '">Tweet</a> ';
@@ -85,8 +84,7 @@ $(".fancybox")
 	  }
         },
         afterShow: function() {
-
-        			FB.XFBML.parse();
+		 			FB.XFBML.parse();
 					twttr.widgets.load();
           
         },
@@ -94,7 +92,13 @@ $(".fancybox")
             title : {
                 type: 'inside'
             }
-        }  
+            /*,
+            thumbs: {
+                source  : function(current) {
+                    return $(current.element).data('img');
+                }
+            }*/
+       }  
     });
 
 
@@ -108,6 +112,7 @@ $(".fancybox")
 
 					var webm = $(this).data('webm');
 					var mp4 = $(this).data('mp4');
+					var poster = $(this).data('poster');
 
 					var sources = [
             			{ src: mp4, type: 'video/mp4' },
@@ -119,6 +124,9 @@ $(".fancybox")
 					myPlayer.setSrc(sources);
 				    myPlayer.load();
 				    myPlayer.play();
+
+				    $('video').attr('poster',poster);
+
 			});
 
 		  }
