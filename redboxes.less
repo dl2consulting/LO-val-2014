@@ -26,7 +26,7 @@
 	font-family: 'Open Sans',Arial,sans-serif;
 	padding: 10px 0;
 	font-weight: bold;
-	background-color: #d1111c;
+	background-color: @lo-red;
 	color: #ffffff;
 	text-align: center;
 	font-size: 23px;
@@ -65,6 +65,13 @@ ul.politiska-krav li > a {
 }
 .politiska-krav .before {
 	margin-right: 6px;
+	color: @lo-red;
+	padding: 5px;
+	border: 1px solid @lo-red;
+
+	-webkit-border-radius: 18px;
+	-moz-border-radius: 18px;
+	border-radius: 18px;
 }
 .politiska-krav a > .after {
 	margin-left: 6px;
@@ -81,7 +88,7 @@ ul.politiska-krav .johnny-ramone {
 	font-size: 20px;
 	float: left;
 	line-height: 20px;
-	color: #d1111c;
+	color: @lo-red;
 	margin-top: 2px;
 }
 ul.politiska-krav .tommy-ramone {
