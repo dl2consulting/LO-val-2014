@@ -18,17 +18,23 @@ if (matchMedia) {
 	
 	var mq = window.matchMedia("(max-width: 1024px)");
 
+    try{
+        mq.addListener(WidthChange);
+        WidthChange(mq);
+    } catch( err ){}
+
+
+/*
 	if (!mq.addEventListener) {
     	//mq.attachEvent('resize', WidthChange);
-    	 mq.addListener(WidthChange);
+        mq.addListener(WidthChange);
     	WidthChange(mq);
-}
-else {
-	
-    mq.addListener(WidthChange);
-	WidthChange(mq);
-}
-
+    }
+    else {
+        mq.addListener(WidthChange);
+        WidthChange(mq);
+    }
+*/
 	
 }
 
@@ -36,7 +42,6 @@ else {
 function WidthChange(mq) {
 
 	if (mq.matches) {
-
 		slidervideo = $('.video-slider').bxSlider({
 		    slideWidth: 228,
 		    adaptiveHeight: false,
@@ -46,9 +51,10 @@ function WidthChange(mq) {
  		 });	
 	}
 	else {
+		if (typeof(slidervideo) != "undefined"){
+            slidervideo.destroySlider();
+        }
 		
-		if (typeof(slidervideo) != "undefined")
-		slidervideo.destroySlider();
 
 		//var slider = $('.video-wrap .bx-wrapper');
 		//var slider = $('.video-slider');
