@@ -198,5 +198,44 @@ $(".fancybox")
     });
 
 
+    var $counter = $('.special-text-headline');
+    var today = new Date();
+	var dDay = new Date("May 25, 2014");
+	var msPerDay = 24 * 60 * 60 * 1000 ;
+	var timeLeft = (dDay.getTime() - today.getTime());
+	var hours = Math.abs(today - dDay) / 36e5;
+	var e_daysLeft = timeLeft / msPerDay;
+	var daysLeft = Math.floor(e_daysLeft);
+	daysLeft+=1;
+	if(daysLeft==1) {
+		
+		$('.special-text').text('dag kvar!');
+	}
+	$counter.text(daysLeft);
+	var $header2 = $('.special-text-img');
+
+console.log(daysLeft + ' ' + hours);
+
+	if(daysLeft < 1 ) {
+		$('.special-text').text('');
+		$('.special-text-headline').text('');
+	}
+
+ 	var $spans = $header2;
+ 	var delay = 0;
+ 	$header2.on('click', function(e){
+		   $(this).css({transitionDelay: delay+'s'}); 
+		   delay += 0.1;
+  		   $header2.addClass('text-effect'); 
+  			setTimeout(function(){ 
+	    		$(this).css({transitionDelay: '0ms'}) 
+	 			$header2.removeClass('text-effect'); 
+			   delay = 0;
+			}, 1800); 
+			e.preventDefault();
+  			
+ });
+
+
 });
 
