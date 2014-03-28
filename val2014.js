@@ -75,7 +75,7 @@ $('.info-slider').bxSlider({
     adaptiveHeight: false,
     minSlides: 1,
     maxSlides: 4,
-    slideMargin: 20
+    slideMargin: 23
   });	
 
 $(".fancybox")
