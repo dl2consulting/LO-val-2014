@@ -214,7 +214,6 @@ $(".fancybox")
 	$counter.text(daysLeft);
 	var $header2 = $('.special-text-img');
 
-console.log(daysLeft + ' ' + hours);
 
 	if(daysLeft < 1 ) {
 		$('.special-text').text('');
