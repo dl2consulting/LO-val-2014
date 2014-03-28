@@ -47,8 +47,8 @@ function WidthChange(mq) {
 		    adaptiveHeight: false,
 		    minSlides: 1,
 		    maxSlides: 4,
-		    slideMargin: 10,
-		    slideHeight: 210
+		    slideMargin: 30,
+		    adaptiveHeight: true
  		 });	
 	}
 	else {
