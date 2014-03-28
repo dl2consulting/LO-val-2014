@@ -72,13 +72,23 @@ meter::-webkit-meter-bar {
 }
 
 .val-footer .turne-plan {
-	max-width:444px;
+	/* max-width:444px; */
 	float: left;
 	width: 100%;
 }
+.val-footer .turne-plan > ul {
+	margin: 0;
+	padding: 0;
+}
 
 .turne-plan img {
-	margin-bottom: 12px;
+	display: block;
+	margin: 1px auto 12px;
+	/* margin-bottom: 12px; */
+}
+/* fix pixel police task force */
+.turne-plan .box-link {
+	margin-top: 17px;
 }
 
 .turne-frame {
@@ -88,7 +98,7 @@ meter::-webkit-meter-bar {
 	
 	width: 100%;
 	background-color: #000;
-	margin-bottom: 15px;
+	margin-bottom: 18px;
 	/* height: 36px; */
 	/* padding: 10px 8px 0 !important; */
 	padding: 9px 8px !important; 
@@ -140,5 +150,15 @@ meter::-webkit-meter-bar {
 .lomedverkande:last-child:after {
 	content: "";
 }
+
+.val-footer > .container > .two-col {
+	max-width: 100%;
+	width: 100%;
+	margin: 0 0 20px;
+}
+
+.val-footer > .container > .two-col + .two-col {
+	margin: 0;
+}	
 
 
