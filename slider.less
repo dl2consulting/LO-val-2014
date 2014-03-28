@@ -11,32 +11,37 @@
 	float:none;
 }
 
-.bx-wrapper .bx-viewport {
-	-moz-box-shadow: none;
-	-webkit-box-shadow: none;
-	box-shadow: none;
+.news-slider .slide {
+	padding: 0 20px 0 0 !important;
+	margin: 14px 0 0px !important;
 }
 
-.infografik .bx-viewport {
-	height: 178px !important;
-}
+.infografik {
 
-.infografik .bx-wrapper {
-	/*max-width: 900px !important;*/
-	padding-left:45px;
-	padding-right:45px;
-}
+	.bx-viewport {
+		height: 165px !important;
+		border: 5px solid transparent !important;
+		background: none !important;
+	}
 
-.infografik .bx-wrapper .bx-prev{
-	left:0;
+	.bx-wrapper {
+		max-width: 1000px !important;
+		padding-left:45px;
+		padding-right:30px;
+	}
+
+	.bx-wrapper .bx-prev{
+		left:0;
+	}
+
+	.bx-wrapper img {
+		border: 1px solid #d6d6d6;
+	}
+
 }
 
 .bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active {
 	background:#262626 !important;
-}
-
-.bx-wrapper .bx-pager.bx-default-pager a {
-	background: #c9c9c9 !important;
 }
 
 .bx-prev, .bx-next {
@@ -48,42 +53,88 @@
 	width: 30px;
 	top: 42%;
 	z-index: 99;
+	right: 0;
 }
 #byt-politik-2014 .infografik .bx-wrapper .bx-controls-direction a {
 	top: 50%;
 }
 
 
-.bx-wrapper .bx-prev:hover{
-	background-position: 0 -31px !important;
-}
-.bx-wrapper .bx-next:hover{
-	background-position: -40px -31px !important;
-}
-
-.bx-wrapper .bx-prev {
-	/* left: 10; */
-	left: 0 !important;
-	/* background: url(/home/lo/res.nsf/vRes/global_1393509533633_pilar1_png/$File/pilar1.png) no-repeat 0 -32px !important; */
-	background: url(/home/lo/res.nsf/vRes/global_1393509533633_pilar1_png/$File/pilar1.png) no-repeat 0 0 !important; 
-}
-
-.bx-wrapper .bx-next {
-	/* right: 10px; */
-	/* background: url(/home/lo/res.nsf/vRes/global_1393509533633_pilar1_png/$File/pilar1.png) no-repeat -43px -32px !important; */
-	background: url(/home/lo/res.nsf/vRes/global_1393509533633_pilar1_png/$File/pilar1.png) no-repeat -40px 0 !important;
-}
-
 .infografik .bx-wrapper .bx-prev {
 	/* left: 10px; */
+	left: 0 !important;
 	/* background: url(/home/lo/res.nsf/vRes/global_1393509533633_pilar2_png/$File/pilar2.png) no-repeat 0 -32px !important; */
+	background: url(/home/lo/res.nsf/vRes/global_1393509533633_pilar2_png/$File/pilar2.png) no-repeat 0 0 !important; 
 }
 
 .infografik .bx-wrapper .bx-next {
 	/* right: 10px; */
 	/* background: url(/home/lo/res.nsf/vRes/global_1393509533633_pilar2_png/$File/pilar2.png) no-repeat -43px -32px !important; */
+	background: url(/home/lo/res.nsf/vRes/global_1393509533633_pilar2_png/$File/pilar2.png) no-repeat -40px 0 !important;
 }
 
+
+
+.news {
+
+	.puff a h2 {
+		font-size: 26px;
+	}
+	.bx-wrapper {
+		margin-left: 10px !important;
+		margin-right: 10px !important;
+	}
+	section {
+		background-color: #fff;
+	}
+
+	.bx-pager, .bx-wrapper .bx-controls-auto {
+			bottom:8px !important;
+		}
+}
+
+.video-wrap .bx-viewport {
+	height: 112px !important;	
+}
+
+
+.bx-wrapper {
+
+		margin:0 !important;
+
+		.bx-viewport {
+			-moz-box-shadow: none !important;
+			-webkit-box-shadow: none !important;
+			box-shadow: none !important;
+			left:0 !important;
+		}
+
+		.bx-pager.bx-default-pager a {
+			background: #c9c9c9 !important;
+		}
+	
+		.bx-prev:hover{
+			background-position: 0 -31px !important;
+		}
+
+		.bx-next:hover{
+			background-position: -40px -31px !important;
+		}
+		
+		.bx-prev {
+			/* left: 10; */
+			left: 0 !important;
+			/* background: url(/home/lo/res.nsf/vRes/global_1393509533633_pilar1_png/$File/pilar1.png) no-repeat 0 -32px !important; */
+			background: url(/home/lo/res.nsf/vRes/global_1393509533633_pilar1_png/$File/pilar1.png) no-repeat 0 0 !important; 
+		}
+		.bx-next {
+			/* right: 10px; */
+			/* background: url(/home/lo/res.nsf/vRes/global_1393509533633_pilar1_png/$File/pilar1.png) no-repeat -43px -32px !important; */
+			background: url(/home/lo/res.nsf/vRes/global_1393509533633_pilar1_png/$File/pilar1.png) no-repeat -40px 0 !important;
+		}
+		
+}
+	
 /*
 .bx-wrapper .bx-prev:hover {
 	background-position: 0 0;
