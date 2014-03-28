@@ -48,7 +48,7 @@ function WidthChange(mq) {
 		    minSlides: 1,
 		    maxSlides: 4,
 		    slideMargin: 10,
-		    sliteHeight: 210
+		    slideHeight: 210
  		 });	
 	}
 	else {
