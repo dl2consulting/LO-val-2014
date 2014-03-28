@@ -43,11 +43,11 @@ function WidthChange(mq) {
 
 	if (mq.matches) {
 		slidervideo = $('.video-slider').bxSlider({
-		    slideWidth: 228,
+		   slideWidth:200,
 		    adaptiveHeight: false,
 		    minSlides: 1,
-		    maxSlides: 4,
-		    slideMargin: 30,
+		    maxSlides: 10,
+		    slideMargin: 10,
 		    adaptiveHeight: true
  		 });	
 	}
