@@ -5,19 +5,25 @@
 
 .video-wrap {
 	margin:0 !important;
+	background-color: #f0f0f0;
+	
+	/*padding:14px;*/
 }
+
+
 
 .video-mini {
 	padding:0px;
-	border-top: 1px solid;
+	/*border-top: 1px solid;*/
+	margin:25px;
 	background-repeat: no-repeat;
 
- 	background-position: center top!important;
-    background-color: #000!important;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+ 	background-position: center top !important;
+    background-color: none !important;
+    -webkit-background-size: auto 78px;
+    -moz-background-size: auto 78px;
+    -o-background-size: auto 78px;
+    background-size: auto 78px;
 
 	&:hover { 
 		opacity: 0.8;
@@ -32,9 +38,14 @@
 	display:block;
 	margin-left: auto;
 	margin-right: auto;
-	padding:15.1px 0;
+	/*padding:15.1px 0;*/
 	&:hover {
 		opacity: 0.5;
 		filter: alpha(opacity=50);
 	}
+	opacity: 0;
+	filter: alpha(opacity=0);
 }
+
+
+
