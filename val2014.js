@@ -137,7 +137,42 @@ $(".fancybox")
 			});
 
 		  }
- });     
+ });
+
+
+    function turnePlan(){
+        var $turneplan = $('.turne-plan');
+            //$ul = $turneplan.find('ul'),
+            //$lis = $turneplan.find('li');
+
+        //hide all but 4:
+        $turneplan.find('li').each( function(i , el){
+            //console.log('elem' + i, $(el));
+            if ( i > 3 ){
+                $(el).addClass('hide');
+            }
+        } );
+
+        //show 5 more
+        $turneplan.find('.box-link > a').on( 'click', function(e){
+            var $hidden = $turneplan.find('li.hide');
+
+            e.preventDefault();
+
+            //no more to show:
+            if ( $hidden.length < 6 ){
+                $turneplan.find('.box-link').remove();
+            } 
+
+            $hidden.each( function(i,el){
+                if ( i > 4 ){
+                    return false;
+                }
+                $(el).removeClass('hide');
+            } );
+            
+        } );
+    }     
 
     /* toggle politiska krav */
     $('.politiska-krav').on('click', 'a', function(e){
@@ -197,6 +232,10 @@ $(".fancybox")
         });
 
     });
+
+    /* turnneplan */
+    turnePlan();
+
 
 
     var $counter = $('.special-text-headline');
