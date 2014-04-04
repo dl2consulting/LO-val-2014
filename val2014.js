@@ -172,7 +172,14 @@ $(".fancybox")
             } );
             
         } );
-    }     
+    }
+
+    function feedback( msg, $form ){
+        $form.find('.feedback').remove();
+        if ( msg !== '' ){
+             $('<p class="feedback">' + msg + '</p>').appendTo($form).slideDown('medium');
+        }
+    }  
 
     /* toggle politiska krav */
     $('.politiska-krav').on('click', 'a', function(e){
@@ -200,20 +207,53 @@ $(".fancybox")
         var $form = $(this),
             $btn = $form.find('button'),
             data = $form.serialize(),
-            url = $form.attr('action');
+            url = $form.attr('action'),
+            $gimmeone = $form.find('.gimmeone'),
+            $gimme = $form.find('.gimme'),
+            foundone = false,
+            foundall = true;
 
         e.preventDefault();
 
-        $form.find('.feedback').remove();
+        feedback( '', $form );
 
+        //validering:
+        $gimmeone.each(function(i, el){
+            var $el = $(el);
+            $el.removeClass("missing");
+            if ( $el.val() !== '' ){
+                foundone = true;
+            }
+        });
+
+        if ( !foundone ){
+            $gimmeone.addClass("missing");
+        }
+
+        $gimme.each( function(i, el){
+            var $el = $(el);
+            $el.removeClass("missing");
+
+            if ( $el.val() === '' ){
+
+                $el.addClass("missing");
+            }
+        } );
+
+        if ( $form.find('.missing').length ){
+            feedback( 'Du glömde fylla i något fält.', $form );
+            return false;
+        }
         //todo spinner?
 
         $.ajax({
             url: url,
             data: data,
             dataType: 'xml',
+            type: 'POST',
             error: function(){
-                alert('Något gick fel');
+                feedback( 'Något gick fel.', $form );
+                //alert('Något gick fel');
             },
             success: function( xml ){
                 var $xml = $(xml),
@@ -225,7 +265,8 @@ $(".fancybox")
                     }
                 } catch(err){}/* ngt gick fel */
 
-                $('<p class="feedback">' + msg + '</p>').appendTo($form).slideDown('medium');
+                feedback( msg, $form );
+                //$('<p class="feedback">' + msg + '</p>').appendTo($form).slideDown('medium');
                 //console.log('xml:', xml);
             }
 
