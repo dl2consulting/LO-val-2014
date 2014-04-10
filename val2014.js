@@ -43,10 +43,10 @@ function WidthChange(mq) {
 
 	if (mq.matches) {
 		slidervideo = $('.video-slider').bxSlider({
-		   slideWidth:200,
+		   	slideWidth:150,
 		    adaptiveHeight: false,
 		    minSlides: 1,
-		    maxSlides: 10,
+		    maxSlides: 4,
 		    slideMargin: 10,
 		    adaptiveHeight: true
  		 });	
@@ -79,15 +79,17 @@ $('.info-slider').bxSlider({
     slideMargin: 23
   });	
 
-$(".fancybox")
-    .attr('rel', 'gallery')
-    .fancybox({
-        beforeShow: function () {
 
-            if (this.title) {
+$(".fancybox").attr('rel', 'gallery').fancybox({
+		beforeLoad: function () {
+			
+},
+		 beforeShow: function () {
+	        if (this.title) {
+        	var href = $(this.element).data('shareref');
                 this.title += '<br />';
-                this.title += '<a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-url="' + this.href + '">Tweet</a> ';
-                this.title += '<div class="fb-share-button" data-href="'+this.href+'" data-type="button_count"></div>';
+                this.title += '<a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-url="' + href + '">Tweet</a> ';
+                this.title += '<div class="fb-share-button" data-href="'+href+'" data-type="button_count"></div>';
 	  }
         },
         afterShow: function() {
